@@ -1,0 +1,31 @@
+
+<section class="container ">
+    <div class="row">
+
+        @for (cato of catogryList; track $index) {
+
+            <div class="col-md-6 ">
+                <div class="  text-white h-100 p-3 shadow-lg rounded-3" >
+                    <img [src]="cato.image" alt="cato" class="w-100 rounded-3" height="400px" >
+                 <div class="p-2 text-center itm rounded-3">
+    
+                    <h3> ID :  <span class="fs-5">{{cato._id}}</span> </h3>
+                    <h3> Name : <span class="fs-5">{{cato.name}}</span>  </h3>
+                    <h3> Slug : <span class="fs-5">{{cato.slug}}</span> </h3>
+                    <h3> createdAt:  <span class="fs-5">{{cato.createdAt}}</span> </h3>
+                    <h3> updatedA : <span class="fs-5">{{cato.updatedAt}}</span> </h3>
+    
+                 </div>
+                    
+    
+    
+    
+                    
+                </div>
+            </div>
+
+        }
+       
+    </div>
+
+</section>

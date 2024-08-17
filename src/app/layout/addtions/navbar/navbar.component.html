@@ -1,0 +1,55 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary ">
+    <div class="container">
+      <img src="assets/img/freshcart-logo.svg" alt="">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      @if( loging == true){
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" routerLink="home" routerLinkActive="RAct rounded-3">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" routerLink="cart" routerLinkActive="RAct rounded-3">carts</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" routerLink="proud" routerLinkActive="RAct rounded-3">prouducts</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" routerLink="brand" routerLinkActive="RAct rounded-3">brands</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" routerLink="catogries" routerLinkActive="RAct rounded-3">catogires</a>
+            </li>
+          </ul>
+        </div>
+
+      }
+     
+    
+      <div class="d-flex gap-3 align-items-center">
+        <i class="fa-brands fa-facebook"></i>
+        <i class="fa-brands fa-instagram"></i>
+        <i class="fa-brands fa-linkedin"></i>
+        <i class="fa-brands fa-twitter"></i>
+
+        @if (loging==false) {
+          <a class="nav-link active" aria-current="page" routerLink="login" routerLinkActive="RAct rounded-3 p-1">login</a>
+          <a class="nav-link active" aria-current="page" routerLink="regest" routerLinkActive="RAct rounded-3 p-1">Regester</a>
+          
+
+  
+        }
+  
+      </div>
+      @if (loging==true) {
+        <div class="d-flex gap-3 align-items-center ps-2">
+        <a  (click)="logOut()" class="nav-link active cur " aria-current="page"  routerLinkActive="RAct rounded-3 p-1">logOut</a>
+      </div>
+    }
+        
+    </div>
+  </nav>

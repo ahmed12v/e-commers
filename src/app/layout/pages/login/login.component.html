@@ -1,0 +1,97 @@
+
+<form [formGroup]='loginForm ' (ngSubmit)="SubmitLogin()" >
+
+    <div>
+        <h1 class="m-5">
+            Login Now :
+        </h1>
+
+
+       
+
+
+        <div class="container ">
+            <div class="row">
+                <div class="col-md-7 ">
+                    @if (errorMass) {
+                        <div class="alert alert-danger m-0 p-0">
+                                 <p class="m-0 p-1">{{errorMass}} </p>
+                        </div>
+                    }
+                    
+                    <div>
+        
+                        <label for="" class="py-2">  email : </label>
+                    <input formControlName="email" fo type="email" class="form-control ">
+
+                    @if (loginForm.get('email')?.errors && loginForm.get('email')?.touched) {
+
+                        <div class=" alert alert-danger p-0 m-0">
+                            @if (loginForm.get('email')?.errors?.['required']) {
+                                <p class="p-1 m-0"> email is required  </p>
+
+                            }
+                            @if (loginForm.get('email')?.errors?.['email']) {
+                                <p class="p-1 m-0"> please enter email   </p>
+
+                            }
+                            
+                           
+                        </div>
+
+                    }
+                    
+
+        
+                    </div>
+                    <div>
+        
+                        <label for="" class="py-2">  password : </label>
+                    <input formControlName="password" type="text" class="form-control ">
+                    @if (loginForm.get('password')?.errors && loginForm.get('password')?.touched) {
+
+                        <div class=" alert alert-danger p-0 m-0">
+                            @if (loginForm.get('password')?.errors?.['required']) {
+                                <p class="p-1 m-0"> password is required  </p>
+
+                            }
+                            @if (loginForm.get('password')?.errors?.['pattern']) {
+                                <p class="p-1 m-0"> please chose valid password : (A-Z / 0-9 /a-z & min Caractor = 8 )   </p>
+
+                            }
+                            
+                            
+                           
+                        </div>
+
+                    }
+        
+                    </div>
+                    
+            
+            
+                    <button [disabled]="loginForm.invalid"  class="btn btn-primary mt-3 botn ms-auto d-block  ">
+                        @if (spinner) {
+                            <i class="fa fa-spin fa-spinner"></i>
+                           
+                        }
+                        @else {
+                            <span> LOgin </span>
+                        }
+                        
+                        
+                        
+                    </button>
+                </div>
+                <div>
+                    
+                </div>
+
+                </div>
+
+            </div>
+            
+    </div>
+
+</form>
+

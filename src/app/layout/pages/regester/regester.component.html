@@ -1,0 +1,173 @@
+
+<form [formGroup]='regesterForm ' (ngSubmit)="SubmitRegester()" >
+
+    <div>
+        <h1 class="m-5">
+            Regester Now :
+        </h1>
+
+
+       
+
+
+        <div class="container ">
+            <div class="row">
+                <div class="col-md-7 ">
+                    @if (errorMass) {
+                        <div class="alert alert-danger m-0 p-0">
+                                 <p class="m-0 p-1">{{errorMass}} </p>
+                        </div>
+                    }
+                    <div>
+
+                        <label for="" class="py-2"> name :  </label>
+                    <input formControlName="name" type="text" class="form-control ">
+
+                    @if (regesterForm.get('name')?.errors && regesterForm.get('name')?.touched ){
+
+                        <div class=" alert alert-danger p-0 m-0">
+                            @if ( regesterForm.get('name')?.errors?.['required']) {
+                                <p class="p-1 m-0"> Name is required </p>
+
+                            }
+                            @if ( regesterForm.get('name')?.errors?.['minlength']) {
+                                <p class="p-1 m-0"> Name min Lenght = 3 </p>
+
+                            }
+                            @if ( regesterForm.get('name')?.errors?.['maxlength']) {
+                                <p class="p-1 m-0"> Name max Length = 12 </p>
+
+                            }
+                           
+                            
+                           
+                        </div>
+                        
+                    }
+
+
+                    
+        
+                    </div>
+                    <div>
+        
+                        <label for="" class="py-2">  email : </label>
+                    <input formControlName="email" fo type="email" class="form-control ">
+
+                    @if (regesterForm.get('email')?.errors && regesterForm.get('email')?.touched) {
+
+                        <div class=" alert alert-danger p-0 m-0">
+                            @if (regesterForm.get('email')?.errors?.['required']) {
+                                <p class="p-1 m-0"> email is required  </p>
+
+                            }
+                            @if (regesterForm.get('email')?.errors?.['email']) {
+                                <p class="p-1 m-0"> please enter email   </p>
+
+                            }
+                            
+                           
+                        </div>
+
+                    }
+                    
+
+        
+                    </div>
+                    <div>
+        
+                        <label for="" class="py-2">  password : </label>
+                    <input formControlName="password" type="text" class="form-control ">
+                    @if (regesterForm.get('password')?.errors && regesterForm.get('password')?.touched) {
+
+                        <div class=" alert alert-danger p-0 m-0">
+                            @if (regesterForm.get('password')?.errors?.['required']) {
+                                <p class="p-1 m-0"> password is required  </p>
+
+                            }
+                            @if (regesterForm.get('password')?.errors?.['pattern']) {
+                                <p class="p-1 m-0"> please chose valid password : (A-Z / 0-9 /a-z & min Caractor = 8 )   </p>
+
+                            }
+                            
+                            
+                           
+                        </div>
+
+                    }
+        
+                    </div>
+                    <div>
+        
+                        <label for="" class="py-2"> rePassword : </label>
+                    <input formControlName="rePassword" type="text" class="form-control ">
+                    @if (regesterForm.get('rePassword')?.errors && regesterForm.get('rePassword')?.touched) {
+
+                        <div class=" alert alert-danger p-0 m-0">
+                            @if (regesterForm.get('rePassword')?.errors?.['required']) {
+                                <p class="p-1 m-0"> re-password is required  </p>
+
+                            }
+                            @if (regesterForm.get('rePassword')?.errors?.['missmatch']) {
+                                <p class="p-1 m-0"> re-password not match with password  </p>
+
+                            }
+                            
+                            
+                            
+                           
+                        </div>
+
+                    }
+        
+                    </div>
+                    <div>
+        
+                        <label for="" class="py-2">  Phone : </label>
+                    <input formControlName="phone" type="tel" class="form-control ">
+
+                    @if (regesterForm.get('phone')?.errors && regesterForm.get('phone')?.touched) {
+
+                        <div class=" alert alert-danger p-0 m-0">
+                            @if (regesterForm.get('phone')?.errors?.['required']) {
+                                <p class="p-1 m-0"> Phone is required  </p>
+
+                            }
+                            @if (regesterForm.get('phone')?.errors?.['pattern']) {
+                                <p class="p-1 m-0"> please enter egyption mob   </p>
+
+                            }
+                            
+                           
+                        </div>
+
+                    }
+        
+                    </div>
+            
+            
+                    <button [disabled]="regesterForm.invalid"  class="btn btn-primary mt-3 botn ms-auto d-block  ">
+                        @if (spinner) {
+                            <i class="fa fa-spin fa-spinner"></i>
+                           
+                        }
+                        @else {
+                            <span> Regester </span>
+                        }
+                        
+                        
+                        
+                    </button>
+                </div>
+                <div>
+                    
+                </div>
+
+                </div>
+
+            </div>
+            
+    </div>
+
+</form>
+

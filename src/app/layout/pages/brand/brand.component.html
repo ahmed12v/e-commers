@@ -1,0 +1,40 @@
+<section class="container ">
+    <div class="row">
+                    @for (brand of brandList ; track $index) {
+                        <div class="col-md-9  ">
+                            <div class="items d-flex align-content-center py-3 shadow-lg gap-3 rounded-3 ">
+                                <div class="w-50">
+                                    <img [src]="brand.image" alt="brand" class="w-100 ">
+                                   </div>
+                                        
+                                    <div class="w-50 ">
+                                        <div class="mt-5 ">
+
+                                        <h3 class="overflow-hidden"> <span class="h3">Id</span>  : {{brand._id}} </h3>
+                                        <h3> <span class="h3">Name</span> : {{brand.name}} </h3>
+                                        <h3> <span class="h3">Slug</span> : {{brand.slug}} </h3>
+                                        <p><span class="h3">createdAt</span>:  {{brand.createdAt}}</p>
+                                        <p><span class="h3">updatedA</span>:  {{brand.updatedAt}}</p>
+
+                                        </div>
+                                        
+            
+                                    </div>
+
+                            </div>
+                            
+                        </div>
+                            
+                    }
+                
+                </div>
+
+            
+
+            
+    
+           
+
+   
+
+</section>
